@@ -1,0 +1,22 @@
+{
+  "name": "joannecrowther.com",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Jose Nunez",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify": "0.0.15",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.1.2",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {}
+}
