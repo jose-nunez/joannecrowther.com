@@ -11,5 +11,6 @@
 	<section id="content" role="main">
 		<div class="maintitle">Joanne Crowther</div>
 	</section>
+	<?php wp_footer(); ?>
 </body>	
 </html>
