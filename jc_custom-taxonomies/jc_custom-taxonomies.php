@@ -1,44 +1,51 @@
 <?php
 /*
-Plugin Name: Custom Taxonomies for joannecrowther.com
-Description: creates custom taxomies
+Plugin Name: Taxonomies joannecrowther.com
+Description: Creates "Compilation" taxonomy
+Plugin URI: www.josenunez.org
+Version: 1.0
+Author: Jose Nunez
+Author URI: www.josenunez.org
 */
-?>
 
-<?php 
-//hook into the init action and call create_book_taxonomies when it fires
-add_action( 'init', 'create_compilation_hierarchical_taxonomy', 0 );
 
-//create a custom taxonomy name it compilation for your posts
-function create_compilation_hierarchical_taxonomy() {
+define('JCCT_URL',plugin_dir_url( __FILE__ ));
 
-// Add new taxonomy, make it hierarchical like categories
-//first do the translations part for GUI
+class jcCustomTaxonomies{
 
-$labels = array(
-	'name' => _x( 'Compilation', 'taxonomy general name' ),
-	'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
-	'search_items' =>__( 'Search Compilation' ),
-	'all_items' => __( 'All Compilation' ),
-	'parent_item' => __( 'Parent Topic' ),
-	'parent_item_colon' => __( 'Parent Topic:' ),
-	'edit_item' => __( 'Edit Topic' ), 
-	'update_item' => __( 'Update Topic' ),
-	'add_new_item' => __( 'Add New Topic' ),
-	'new_item_name' => __( 'New Topic Name' ),
-	'menu_name' => __( 'Compilation' ),
-); 	
+	function install(){}
+	function uninstall(){}
 
-// Now register the taxonomy
+	function init(){
+		$labels = array(
+			'name' => _x( 'Compilation', 'taxonomy general name' ),
+			'singular_name' => _x( 'Compilation', 'taxonomy singular name' ),
+			'search_items' =>__( 'Search Compilation' ),
+			'all_items' => __( 'All Compilation' ),
+			'parent_item' => __( 'Parent Compilation' ),
+			'parent_item_colon' => __( 'Parent Compilation:' ),
+			'edit_item' => __( 'Edit Compilation' ), 
+			'update_item' => __( 'Update Compilation' ),
+			'add_new_item' => __( 'Add New Compilation' ),
+			'new_item_name' => __( 'New Compilation Name' ),
+			'menu_name' => __( 'Compilations' ),
+		);
 
-register_taxonomy('compilation',array('post'), array(
-	'hierarchical' => true,
-	'labels' => $labels,
-	'show_ui' => true,
-	'show_admin_column' => true,
-	'query_var' => true,
-	'rewrite' => array( 'slug' => 'topic' ),
-));
-
+		register_taxonomy('compilation',array('post'), array(
+			'hierarchical' => true,
+			'labels' => $labels,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'compilation' ),
+		));
+	}
 }
+
+global $jcct_plugin;
+$jcct_plugin = new jcCustomTaxonomies();
+add_action('init', array($jcct_plugin,'init'),10);
+register_activation_hook( __FILE__, array($jcct_plugin,'install'));
+register_deactivation_hook( __FILE__,array($jcct_plugin,'uninstall'));
+
 ?>
