@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Taxonomies joannecrowther.com
+Plugin Name: joannecrowther.com - Taxonomies
 Description: Creates "Compilation" taxonomy
 Plugin URI: www.josenunez.org
 Version: 1.0
