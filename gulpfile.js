@@ -21,11 +21,11 @@ var imagemin = require('gulp-imagemin');
 	ALWAYS FINISH DIRECTORIES WITH SLASH '/'
 */
 
-var lib_dir = 'node_modules/';
-var src_dir = "src/";
+var lib_dir = './node_modules/';
+var src_dir = "./src/";
 var build_dir = "../wordpress/wp-content/themes/joannecrowther/";
 
-var script_src = src_dir+'js/*.js';
+var script_src = src_dir+'js/**/*.js';
 var script_concat='main.js';
 var script_build = build_dir+'js/';
 
