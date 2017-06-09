@@ -27,9 +27,11 @@ body{
 }
 
 @mixin anchor-hidden-color{
+	font-weight: inherit;
 	color: inherit;
 	&:hover{
 		color: $anchor-color;
+		font-weight: bold;
 	}
 }
 
