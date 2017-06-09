@@ -1,0 +1,30 @@
+header.main-header{
+	margin-bottom: 50px;
+	h1.main-title{
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 3.2rem;
+	}
+
+	#site-description{
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.main-menu-wrap{
+		font-family: 'Amatic SC';
+		font-size: 1.7rem;
+
+		padding:0 20% 0 20%;
+		border-bottom: solid black 1px;
+		#main-menu.main-menu{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			@include flexContainer();
+			li{
+				margin: 0 10px;
+			}
+		}
+	}
+}

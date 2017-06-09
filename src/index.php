@@ -1,16 +1,10 @@
-
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-<?php wp_head(); ?>
-</head>
-<body>
-	<section id="content" role="main">
-		<div class="maintitle">Joanne Crowther</div>
-	</section>
-	<?php wp_footer(); ?>
-</body>	
-</html>
+<?php get_header(); ?>
+<section id="content" role="main">
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php get_template_part( 'entry' ); ?>
+<?php comments_template(); ?>
+<?php endwhile; endif; ?>
+<?php get_template_part( 'nav', 'below' ); ?>
+</section>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
