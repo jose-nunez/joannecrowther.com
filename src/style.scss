@@ -12,8 +12,14 @@ Version: 1.0.0
 @import './css/fonts';
 @import './css/mixins';
 
+$font-size-normal: 1.3rem;
+$font-size-small: 1rem;
+$font-size-big: 2rem;
+$font-size-bigger: 2.3rem;
+
 $site-max-width: 960px;
 $anchor-color: #0073aa;
+$warning-color: #dc0f0f;
 
 /* HEADER ___________________________________________________________________________________________ */
 @import './css/header';
@@ -23,7 +29,7 @@ $anchor-color: #0073aa;
 html,body{height:100%;margin:0;padding:0;}
 body{
 	font-family: 'Josefin Slab';
-	font-size: 130%;
+	font-size: $font-size-normal;
 }
 
 @mixin anchor-hidden-color{
@@ -38,9 +44,14 @@ body{
 a{
 	text-decoration: none;
 	color: $anchor-color;
+	&:hover{ 
+		font-weight: bold;
+	}
+
 	&.hidden{
 		@include anchor-hidden-color;
 	}
+	
 }
 
 .hidden a{
@@ -69,8 +80,7 @@ li{
 }
 
 /* ENTRY ___________________________________________________________________________________________ */
-.entry{
-	
+.entry{	
 	.thumbnail {
 		text-align: center;
 		img{
@@ -79,15 +89,42 @@ li{
 	}
 
 	h2.entry-compilation{
-		font-size: 1.9rem;
-		
+		font-size: $font-size-big;		
 	}
 	h1.entry-title{
 		margin-top: 0;
-		font-size: 2.3rem;
+		font-size: $font-size-bigger;
 	}
 	.entry-content{
 		text-align: justify;
-		margin-bottom: 5rem;
+		margin-bottom: 4rem;
+	}
+}
+
+#comments{
+	h3.comments-title,h3.comment-reply-title{
+		font-size: $font-size-big;
+	}
+	ul{
+		list-style:none;
+
+		.comment-author.vcard{
+			margin-bottom: 1rem;
+		}
+		.comment-awaiting-moderation{
+			color: $warning-color;
+		}
+		.comment-meta.commentmetadata{
+			a{
+				@include anchor-hidden-color;
+				font-size: $font-size-small;
+			}
+		}
+	}
+
+	textarea#comment{
+		font-size: $font-size-normal;
+		width: (30rem/$font-size-normal)+rem;
+		max-width: 100%;
 	}
 }
