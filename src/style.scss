@@ -82,10 +82,9 @@ li{
 /* ENTRY ___________________________________________________________________________________________ */
 .entry{	
 	.thumbnail {
-		text-align: center;
-		img{
-			max-width:100%;
-		}
+		width: 100%;
+		padding-bottom: 42.85%;
+		@include bkg_cover();
 	}
 
 	h2.entry-compilation{

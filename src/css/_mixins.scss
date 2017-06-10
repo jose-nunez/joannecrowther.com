@@ -6,20 +6,20 @@
 	article{display:flex;}
 }
 
-@mixin bkg_contain($url:false,$fixed:false){
+@mixin bkg_contain($url:false,$fixed:false,$posx:center,$posy:center){
 	background-size: contain;
-	@include bkg_center();
+	@include bkg_position($posx,$posy);
 	@include bkg_common($url:$url,$fixed:$fixed);
 }
 
-@mixin bkg_cover($url:false,$fixed:false){
+@mixin bkg_cover($url:false,$fixed:false,$posx:center,$posy:center){
 	background-size: cover;
-	@include bkg_center();
+	@include bkg_position($posx,$posy);
 	@include bkg_common($url:$url,$fixed:$fixed);
 }
 
-@mixin bkg_center(){
-	background-position:center;
+@mixin bkg_position($posx:center,$posy:center){
+	background-position:$posx $posy;
 	background-repeat: no-repeat;
 }
 @mixin bkg_common($url:false,$fixed:false){

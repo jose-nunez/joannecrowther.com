@@ -1,9 +1,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
 	<header class="entry-header">
-		<div class="thumbnail">
-			<?php if ( has_post_thumbnail() ) { the_post_thumbnail(''); } ?>
-		</div>
+		<?php if ( has_post_thumbnail() ): 
+			$bkgpos = false;
+			$custom_pos = get_post_meta(get_the_ID(),'background-position',true);
+			if($custom_pos){
+				$bkgpos = 'background-position:'.$custom_pos;
+			}
+		?>
+			<div class="thumbnail" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);<?php echo $bkgpos? $bkgpos:''; ?>">
+			</div>
+		<?php endif; ?>
 		
 		<?php echo get_the_term_list($post->ID,'compilation','<h2 class="entry-compilation hidden">','','</h2>'); ?>
 
