@@ -188,4 +188,11 @@ li{
 	h3.widget-title:first-of-type{
 		margin-top: 0px;
 	}
+
+	.special-frame{
+		border: 1px black solid;
+		padding: 10px;
+		box-shadow: -12px 10px 41px -1px rgba(0,0,0,0.23);
+	}
+
 }
