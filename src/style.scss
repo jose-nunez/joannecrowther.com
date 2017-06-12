@@ -18,6 +18,10 @@ $font-size-big: 2rem;
 $font-size-bigger: 2.3rem;
 
 $site-max-width: 960px;
+$content-max-width: 663px;
+$screen-large: $site-max-width;
+
+
 $anchor-color: #0073aa;
 $warning-color: #dc0f0f;
 
@@ -66,7 +70,7 @@ ul{
 	list-style: circle;
 }
 li{
-	margin-bottom:1rem;
+	margin-bottom:1.5rem;
 }
 
 #wrapper{
@@ -74,9 +78,44 @@ li{
 	margin: 0 auto;
 	padding: 0 20px 0 20px;
 	
-	@media (min-width:$site-max-width){
-		padding: 0 20px 0 20px;
+	/* @media (min-width:$site-max-width){
+		padding: 0;
+	} */
+}
+
+/* CONTAINER ___________________________________________________________________________________________ */
+
+#container{
+	// @include flexContainer();
+	#content,#sidebar{
+		max-width: $content-max-width;
+		margin-bottom: 3rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
+
+	@media (min-width:$screen-large){
+		&::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		#content{
+			float: left;
+			width: 70%;
+			.content-inner{
+				padding-right: 15px;
+			}
+		}
+		#sidebar{
+			float: left;
+			width: 30%;
+			#primary.widget-area{
+				padding-left: 15px;
+			}
+		}
+	}
+
 }
 
 /* ENTRY ___________________________________________________________________________________________ */
@@ -88,7 +127,8 @@ li{
 	}
 
 	h2.entry-compilation{
-		font-size: $font-size-big;		
+		font-size: $font-size-big;
+		margin-bottom: 0.5rem;
 	}
 	h1.entry-title{
 		margin-top: 0;
@@ -103,6 +143,7 @@ li{
 #comments{
 	h3.comments-title,h3.comment-reply-title{
 		font-size: $font-size-big;
+		margin-bottom: 0.5rem;
 	}
 	ul{
 		list-style:none;
@@ -125,5 +166,26 @@ li{
 		font-size: $font-size-normal;
 		width: (30rem/$font-size-normal)+rem;
 		max-width: 100%;
+	}
+}
+
+/* SIDEBAR ___________________________________________________________________________________________ */
+
+#sidebar{
+	ul{
+		padding: 0;
+		margin: 0;
+		>li{
+			list-style-type: none;
+			h3.widget-title{
+				font-size: $font-size-big;
+				margin-bottom: 0.5rem;
+				margin-top: 2rem;
+			}
+		}
+		
+	}
+	h3.widget-title:first-of-type{
+		margin-top: 0px;
 	}
 }

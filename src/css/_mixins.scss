@@ -3,7 +3,7 @@
 	flex-flow: $flow;
 	justify-content: $axis;
 	align-items: $caxis;
-	article{display:flex;}
+	// article{display:flex;}
 }
 
 @mixin bkg_contain($url:false,$fixed:false,$posx:center,$posy:center){
