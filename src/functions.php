@@ -6,6 +6,15 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     return $html;
 }
 
+//Overrides Template for image-widget 
+add_filter('sp_template_image-widget_widget.php', 'image_widget_template');
+function image_widget_template($template) {
+    return get_template_directory() . '/image_widget_template/widget.php';
+}
+add_filter('image_widget_image_maxwidth', 'image_widget_maxwidth');
+function image_widget_maxwidth($template) {
+    return null;
+}
 
 /* ________________________________________________________________________________________________________________ */
 

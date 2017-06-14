@@ -189,10 +189,22 @@ li{
 		margin-top: 0px;
 	}
 
+	img{
+		max-width: 100%;
+	}
+
 	.special-frame{
 		border: 1px black solid;
 		padding: 10px;
 		box-shadow: -12px 10px 41px -1px rgba(0,0,0,0.23);
+	}
+	.profile-pic{
+		img{
+			border-radius: 50%;
+			max-width: 200px;
+			display: block;
+			margin: auto;
+		}
 	}
 
 }
