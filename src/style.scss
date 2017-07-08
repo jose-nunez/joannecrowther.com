@@ -22,8 +22,10 @@ $content-max-width: 663px;
 $screen-large: $site-max-width;
 
 
-$anchor-color: #0073aa;
 $warning-color: #dc0f0f;
+$red:#D70909;
+// $anchor-color: #0072aa;
+$anchor-color: $red;
 
 /* HEADER ___________________________________________________________________________________________ */
 @import './css/header';
@@ -73,6 +75,10 @@ li{
 	margin-bottom:1.5rem;
 }
 
+img{
+	max-width: 100%;
+}
+
 #wrapper{
 	max-width:$site-max-width;
 	margin: 0 auto;
@@ -111,7 +117,7 @@ li{
 			float: left;
 			width: 30%;
 			#primary.widget-area{
-				padding-left: 15px;
+				padding-left: 20px;
 			}
 		}
 	}
@@ -120,10 +126,13 @@ li{
 
 /* ENTRY ___________________________________________________________________________________________ */
 .entry{	
+
 	.thumbnail {
 		width: 100%;
 		padding-bottom: 42.85%;
-		@include bkg_cover();
+		// @include bkg_cover();
+		background-size: 100% 100%,cover;
+		margin-top: -20px;
 	}
 
 	h2.entry-compilation{
@@ -135,8 +144,13 @@ li{
 		font-size: $font-size-bigger;
 	}
 	.entry-content{
+		overflow-x: hidden;
 		text-align: justify;
 		margin-bottom: 4rem;
+	}
+	.photo-frame{
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -194,7 +208,7 @@ li{
 	}
 
 	.special-frame{
-		border: 1px black solid;
+		border: 1px $red solid;
 		padding: 10px;
 		box-shadow: -12px 10px 41px -1px rgba(0,0,0,0.23);
 	}
