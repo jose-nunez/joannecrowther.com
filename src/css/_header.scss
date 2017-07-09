@@ -1,3 +1,5 @@
+$large-menu: 430px;
+
 header.main-header{
 	margin-bottom: 50px;
 	h1.main-title{
@@ -14,16 +16,29 @@ header.main-header{
 	.main-menu-wrap{
 		font-family: 'Amatic SC';
 		font-size: 1.7rem;
-
-		padding:0 20% 0 20%;
 		border-bottom: solid black 1px;
+
+		@media (min-width:$large-menu){
+			padding:0 20% 0 20%;
+		}
+		
 		#main-menu.main-menu{
 			list-style: none;
 			margin: 0;
 			padding: 0;
-			@include flexContainer();
+
+			@include flexContainer($flow:column);
+			
+			@media (min-width:$large-menu){
+				@include flexContainer();
+			}
+
 			li{
+				text-align: center;
 				margin: 0 10px;
+				a{
+					display: block;
+				}
 			}
 		}
 	}
