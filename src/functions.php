@@ -1,10 +1,21 @@
 <?php
 
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
+// Remove size from post featured image
+add_filter( 'post_thumbnail_html', 'remove_image_size_attributes', 10);
+// add_filter( 'image_send_to_editor', 'remove_image_size_attributes',10);
+function remove_image_size_attributes( $html ) {
+	return preg_replace( '/(width|height)="\d*"/', '', $html );
 }
+
+// Remove size from image gallery shortcode
+add_filter('do_shortcode_tag', 'remove_image_gallery_size_attributes_', 10, 2);
+function remove_image_gallery_size_attributes_( $output, $tag ) {
+	if ( 'gallery' !== $tag ) {return $output;}
+	return preg_replace( '/(width|height)="\d*"/', '', $output );
+}
+
+// lightbox-gallery.php Line #570
+// $total = count($attachments)-(is_numeric($from)? $from:0);
 
 //Overrides Template for image-widget 
 add_filter('sp_template_image-widget_widget.php', 'image_widget_template');
@@ -15,6 +26,7 @@ add_filter('image_widget_image_maxwidth', 'image_widget_maxwidth');
 function image_widget_maxwidth($template) {
     return null;
 }
+
 
 /* ________________________________________________________________________________________________________________ */
 
