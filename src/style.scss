@@ -215,6 +215,11 @@ img{
 		padding: 10px;
 		box-shadow: -12px 10px 41px -1px rgba(0,0,0,0.23);
 	}
+
+	.special-frame-2 .textwidget{
+		@extend .special-frame;
+	}
+
 	.profile-pic{
 		img{
 			border-radius: 50%;
