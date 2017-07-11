@@ -15,6 +15,7 @@ $font-size-bigger: 2.3rem;
 
 $site-max-width: 960px;
 $content-max-width: 663px;
+$sidebar-max-width: 300px;
 $screen-large: $site-max-width;
 
 
@@ -91,9 +92,13 @@ img{
 /* CONTAINER ___________________________________________________________________________________________ */
 
 #container{
-	// @include flexContainer();
-	#content,#sidebar{
+	#content{
 		max-width: $content-max-width;
+	}
+	#sidebar{
+		max-width: $sidebar-max-width;
+	}
+	#content,#sidebar{
 		margin-bottom: 3rem;
 		margin-left: auto;
 		margin-right: auto;
@@ -106,8 +111,10 @@ img{
 			clear: both;
 		}
 		#content{
-			float: left;
-			width: 70%;
+			&:not(.wide){
+				float: left;
+				width: 70%;
+			}
 			.content-inner{
 				padding-right: 15px;
 			}
