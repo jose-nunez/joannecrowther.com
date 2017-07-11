@@ -193,6 +193,15 @@ img{
     max-width: 90%;
 }
 
+footer.content-footer{
+	margin-top: 3rem;
+	border-top: 1px solid black;
+	padding-top: 1rem;
+	.nav-previous,.nav-next{
+		margin-bottom: 1rem;
+	}
+}
+
 /* SIDEBAR ___________________________________________________________________________________________ */
 
 #sidebar{

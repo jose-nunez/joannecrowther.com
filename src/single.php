@@ -9,7 +9,7 @@
 		
 		<?php endwhile; endif; ?>
 		
-		<footer class="footer">
+		<footer class="content-footer">
 			<?php get_template_part( 'nav', 'below-single' ); ?>
 		</footer>
 	</div>
