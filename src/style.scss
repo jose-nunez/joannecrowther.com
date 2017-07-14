@@ -79,6 +79,10 @@ img{
 	max-width: 100%;
 }
 
+input{
+	outline: none;
+}
+
 #wrapper{
 	max-width:$site-max-width;
 	margin: 0 auto;
@@ -269,4 +273,6 @@ footer.content-footer{
 	width: 50%;
     font: inherit;
     border-color: #D70909;
+    border-style: solid;
+    padding-left: 5px;
 }
