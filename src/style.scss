@@ -101,6 +101,9 @@ input{
 	} */
 }
 
+.align-center{
+	text-align:center;
+}
 
 /* CONTAINER ___________________________________________________________________________________________ */
 
@@ -118,11 +121,6 @@ input{
 	}
 
 	@media (min-width:$screen-large){
-		&::after {
-			content: "";
-			display: table;
-			clear: both;
-		}
 		#content{
 			&:not(.wide){
 				float: left;
@@ -157,10 +155,12 @@ input{
 	h2.entry-compilation{
 		font-size: $font-size-big;
 		margin-bottom: 0.5rem;
+		text-align:center;
 	}
 	h1.entry-title{
 		margin-top: 0;
 		font-size: $font-size-bigger;
+		text-align:center;
 	}
 	.entry-content{
 		overflow-x: hidden;

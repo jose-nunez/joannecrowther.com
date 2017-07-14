@@ -12,7 +12,9 @@
 				style="background-image:url(<?php echo get_template_directory_uri() ?>/img/frame_1_white.png),url(<?php echo get_the_post_thumbnail_url(); ?>);<?php echo $bkgpos.$bkgheight; ?>">
 			</div>
 		<?php endif; ?>
-		<?php echo get_the_term_list($post->ID,'compilation','<h2 class="entry-compilation hidden">','','</h2>'); ?>
+		
+			<?php echo get_the_term_list($post->ID,'compilation','<h2 class="entry-compilation hidden">','','</h2>'); ?>
+
 		<h1 class="entry-title"><a class="hidden" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		<?php edit_post_link(); ?>
 		<?php //get_template_part( 'entry', 'meta' ); ?>
