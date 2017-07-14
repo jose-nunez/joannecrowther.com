@@ -9,6 +9,7 @@
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>		
 			<?php get_template_part( 'partials/entry' ); ?>
 			
+			
 			<?php if ( is_single() ) : ?>
 			<footer class="content-footer">
 				<?php get_template_part( 'nav', 'below-single' ); ?>
