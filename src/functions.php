@@ -58,6 +58,18 @@ function revealid_id_column_content( $column, $id ) {
 }*/
 
 
+// Attachment Title
+add_filter( 'the_title', 'joannecrowther_attachment_empty_title', 10, 2 );
+function joannecrowther_attachment_empty_title( $title, $id = null ) {
+
+    if ( is_attachment() && !$title) {
+		$title = 'No title';
+    }
+
+    return $title;
+}
+
+
 /* ________________________________________________________________________________________________________________ */
 
 add_action( 'after_setup_theme', 'joannecrowther_setup' );
