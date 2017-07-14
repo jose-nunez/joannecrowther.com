@@ -30,6 +30,34 @@ function joannecrowther_image_widget_maxwidth($template) {
 }
 
 
+// Show ID in admin Pages
+add_filter( 'manage_posts_columns', 'revealid_add_id_column', 5 );
+add_filter( 'manage_pages_columns', 'revealid_add_id_column', 5 );
+add_action( 'manage_posts_custom_column', 'revealid_id_column_content', 5, 2 );
+add_action( 'manage_pages_custom_column', 'revealid_id_column_content', 5, 2 );
+add_filter( 'manage_posts_sortable_columns', 'revealid_id_sortable_column' );
+function revealid_add_id_column( $columns ) {
+	$checkbox = array_slice( $columns , 0, 1 );
+	$columns = array_slice( $columns , 1 );
+
+	$id['revealid_id'] = 'ID';
+	
+	$columns = array_merge( $checkbox, $id, $columns );
+	return $columns;
+}
+function revealid_id_column_content( $column, $id ) {
+	if( 'revealid_id' == $column ) {
+		echo $id;
+	}
+}
+/*function revealid_id_sortable_column( $columns ) {
+	$columns['revealid_id'] = 'ID';
+    //To make a column 'un-sortable' remove it from the array
+    //unset($columns['date']);
+    return $columns;
+}*/
+
+
 /* ________________________________________________________________________________________________________________ */
 
 add_action( 'after_setup_theme', 'joannecrowther_setup' );
