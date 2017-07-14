@@ -84,6 +84,13 @@ input{
 	outline: none;
 }
 
+.clearfix:after { 
+	content: " ";
+	display: block; 
+	height: 0; 
+	clear: both;
+}
+
 #wrapper{
 	max-width:$site-max-width;
 	margin: 0 auto;
@@ -93,6 +100,7 @@ input{
 		padding: 0;
 	} */
 }
+
 
 /* CONTAINER ___________________________________________________________________________________________ */
 
@@ -200,10 +208,18 @@ input{
 
 footer.content-footer{
 	margin-top: 3rem;
-	border-top: 1px solid black;
 	padding-top: 1rem;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	.nav-previous,.nav-next{
 		margin-bottom: 1rem;
+	}
+	.nav-next{
+		margin-left:15px; 
+		float:right;
+	}
+	.nav-previous{
+		float:left;
 	}
 }
 
