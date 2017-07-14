@@ -7,7 +7,7 @@
 
 		<?php if ( wp_attachment_is_image( $post->ID ) ) : $att_image = wp_get_attachment_image_src( $post->ID, "large" ); ?>
 		<div class="align-center">
-			<a href="<?php echo wp_get_attachment_url( $post->ID ); ?>" title="<?php the_title(); ?>" rel="attachment"><img src="<?php echo $att_image[0]; ?>" class="attachment-medium" alt="<?php $post->post_excerpt; ?>" /></a>
+			<a href="<?php echo wp_get_attachment_url( $post->ID ); ?>" title="<?php the_title(); ?>" target="_blank" rel="attachment"><img src="<?php echo $att_image[0]; ?>" class="attachment-medium" alt="<?php $post->post_excerpt; ?>" /></a>
 		</div>
 		<?php else : ?>
 			<a href="<?php echo wp_get_attachment_url( $post->ID ); ?>" title="<?php echo esc_html( get_the_title( $post->ID ), 1 ); ?>" rel="attachment"><?php echo basename( $post->guid ); ?></a>
