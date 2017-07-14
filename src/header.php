@@ -36,4 +36,3 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu','container_class'=>'main-menu-wrap','menu_class'=>'main-menu','menu_id'=>'main-menu') ); ?>
 			</nav>
 		</header>
-		<div id="container">

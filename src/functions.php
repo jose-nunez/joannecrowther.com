@@ -70,6 +70,11 @@ function joannecrowther_attachment_empty_title( $title, $id = null ) {
 }
 
 
+// Defaul Template change name
+add_filter('default_page_template_title', function() {
+    return 'Right Sidebar';
+});
+
 /* ________________________________________________________________________________________________________________ */
 
 add_action( 'after_setup_theme', 'joannecrowther_setup' );

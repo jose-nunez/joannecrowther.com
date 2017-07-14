@@ -1,9 +1,9 @@
-
-
-
-
+<?php /* 
+	Template Name: Left Sidebar
+	Template Post Type: post, page
+ */?>
 <?php get_header(); ?>
-<div id="container" class="right-sidebar clearfix">
+<div id="container" class="left-sidebar clearfix">
 
 	<section id="content" role="main">
 		<div class="content-inner">

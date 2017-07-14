@@ -121,20 +121,34 @@ input{
 	}
 
 	@media (min-width:$screen-large){
-		#content{
-			&:not(.wide){
+		#content:not(.wide){ width: 70%; }
+		#sidebar{ width: 30%; }
+		&.right-sidebar{
+			#content{
 				float: left;
-				width: 70%;
+				.content-inner{
+					padding-right: 15px;
+				}
 			}
-			.content-inner{
-				padding-right: 15px;
+			#sidebar{
+				float: right;
+				#primary.widget-area{
+					padding-left: 30px;
+				}
 			}
 		}
-		#sidebar{
-			float: left;
-			width: 30%;
-			#primary.widget-area{
-				padding-left: 30px;
+		&.left-sidebar{
+			#content {
+				float: right;
+				.content-inner{
+					padding-left: 15px;
+				}
+			}
+			#sidebar {
+				float: left;
+				#primary.widget-area{
+					padding-right: 30px;
+				}
 			}
 		}
 	}
