@@ -156,14 +156,19 @@ input{
 }
 
 /* ENTRY ___________________________________________________________________________________________ */
+
+@mixin thumbnail{
+	width: 100%;
+	// padding-bottom: 42.85%;
+	padding-bottom: 60%;
+	background-size: 100% 100%,cover;
+	margin-top: -20px;
+}
+
 .entry{	
 
 	.thumbnail {
-		width: 100%;
-		// padding-bottom: 42.85%;
-		padding-bottom: 60%;
-		background-size: 100% 100%,cover;
-		margin-top: -20px;
+		@include thumbnail;
 	}
 
 	h2.entry-compilation{
@@ -315,4 +320,73 @@ footer.content-footer{
 #mce-EMAIL{
 	@extend #s;
 	width: 50%;
+}
+
+
+/* ARCHIVE PAGE ___________________________________________________________________________________________ */
+
+.archive-title{
+	text-align:center;
+	margin-top:0;
+	font-size: 2.3rem;
+}
+
+.archive-meta {
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+.summary{
+	margin-bottom: 3rem;
+	text-align: justify;
+	h1,h2{
+		text-align: left;
+	}
+
+	.thumbnail {
+		@include thumbnail;
+		margin-top: 0;
+	}
+	.summary-content{
+		.summary-content-inner{
+			h1.summary-title{
+				// text-align: center;
+				font-size: 2.3rem;
+				margin-top:0;
+				margin-bottom:1rem;
+
+			}
+			h2.summary-compilation{
+				// text-align: center;
+				font-size: 1.7rem;
+				margin-top:0;
+				margin-bottom:0.7rem;
+				/* &+ h1.summary-title{
+					margin-top: 0;
+				} */
+			}
+		}
+	}
+	@media (min-width:550px){
+		.sumary-thumbnail:not(.hidden){
+			float:left;
+			width:40%;
+		}
+		.summary-content{
+			margin: auto;
+			&:not(.wide){
+				float:right;
+				width:60%;
+				.summary-content-inner{
+					padding-left: 15px;
+				}
+			}
+			&.wide{
+				h1.summary-title,h2.summary-compilation{
+					text-align: center;
+				}
+				width:75%;
+			}
+		}
+	}
 }

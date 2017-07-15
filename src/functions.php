@@ -75,6 +75,13 @@ add_filter('default_page_template_title', function() {
     return 'Right Sidebar';
 });
 
+
+// Excerpt Length
+function joannecrowther_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'joannecrowther_custom_excerpt_length', 999 );
+
 /* ________________________________________________________________________________________________________________ */
 
 add_action( 'after_setup_theme', 'joannecrowther_setup' );
