@@ -282,6 +282,22 @@ footer.content-footer{
 
 }
 
+/* Search Form ___________________________________________________________________________________________ */
+
+#s{
+	font: inherit;
+	border-color: #D70909;
+	border-style: solid;
+	padding-left: 5px;
+}
+#searchsubmit{
+	font: inherit;
+	background-color: #D70909;
+	padding: 1px 10px;
+	border: 2px #D70909 solid;
+	color: white;
+}
+
 /* Mailchimp form hack ___________________________________________________________________________________________ */
 /* 
 
@@ -293,17 +309,10 @@ footer.content-footer{
 
  */
 #mc-embedded-subscribe{	
-    font: inherit;
-    background-color: #D70909;
-    padding: 1px 10px;
-    border: 2px #D70909 solid;
-    color: white;
+	@extend #searchsubmit;
 }
 
 #mce-EMAIL{
+	@extend #s;
 	width: 50%;
-    font: inherit;
-    border-color: #D70909;
-    border-style: solid;
-    padding-left: 5px;
 }
