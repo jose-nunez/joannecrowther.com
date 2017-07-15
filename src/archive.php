@@ -5,9 +5,9 @@
 		<div class="content-inner">
 			<header class="header">
 				<h1 class="archive-title"><?php 
-				if ( is_day() ) { printf( __( 'Daily Archives: %s', 'joannecrowther' ), get_the_time( get_option( 'date_format' ) ) ); }
-				elseif ( is_month() ) { printf( __( 'Monthly Archives: %s', 'joannecrowther' ), get_the_time( 'F Y' ) ); }
-				elseif ( is_year() ) { printf( __( 'Yearly Archives: %s', 'joannecrowther' ), get_the_time( 'Y' ) ); }
+				if ( is_day() ) { printf( __( '%s', 'joannecrowther' ), get_the_time( get_option( 'date_format' ) ) ); }
+				elseif ( is_month() ) { printf( __( '%s', 'joannecrowther' ), get_the_time( 'F Y' ) ); }
+				elseif ( is_year() ) { printf( __( '%s', 'joannecrowther' ), get_the_time( 'Y' ) ); }
 				else { _e( 'Archives', 'joannecrowther' ); }
 				?></h1>
 			</header>

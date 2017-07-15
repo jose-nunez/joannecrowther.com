@@ -4,7 +4,7 @@
 	<section id="content" role="main">
 		<div class="content-inner">
 			<header class="header">
-				<h1 class="archive-title"><?php _e( 'Category Archives: ', 'joannecrowther' ); ?><?php single_cat_title(); ?></h1>
+				<h1 class="archive-title"><?php _e( '', 'joannecrowther' ); ?><?php single_cat_title(); ?></h1>
 
 
 

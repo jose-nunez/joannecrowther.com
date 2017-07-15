@@ -4,7 +4,7 @@
 	<section id="content" role="main">
 		<div class="content-inner">
 			<header class="header">
-				<h1 class="archive-title author"><?php _e( 'Author Archives', 'joannecrowther' ); ?>: <?php the_author_link(); ?></h1>
+				<h1 class="archive-title author"><?php _e( '', 'joannecrowther' ); ?><?php the_author_link(); ?></h1>
 
 
 
