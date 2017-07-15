@@ -11,7 +11,7 @@
 				<?php get_template_part( 'partials/entry' ); ?>
 				
 				
-				<?php if ( is_single() ) : ?>
+				<?php if ( is_single() && wp_count_posts('post','readable')->publish>1) : ?>
 				<footer class="content-footer">
 					<?php get_template_part( 'nav', 'below-single' ); ?>
 				</footer>
