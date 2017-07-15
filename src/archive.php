@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 <div id="container" class="right-sidebar clearfix">
 	<section id="content" role="main">
