@@ -11,6 +11,7 @@
 		<header id="header" class="main-header" role="banner">
 			<section id="branding">
 				<div id="site-title">
+					<?php /*
 					<?php if (($isFront = is_front_page() || is_home() || is_front_page() && is_home())): ?>
 						<h1>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
@@ -18,12 +19,13 @@
 							</a>
 						</h1>	
 					<?php else: ?>
+					*/ ?>
 						<h1 class="main-title">
 							<a class="hidden" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
 								<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 							</a>
 						</h1>
-					<?php endif; ?>
+					<?php //endif; ?>
 				</div>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			</section>
