@@ -390,3 +390,16 @@ footer.content-footer{
 		}
 	}
 }
+
+/* Footer ___________________________________________________________________________________________ */
+#footer{
+	.footer-bottom{
+		@include bkg_contain('img/footer.png',false,center,bottom);
+		// width: 99%;
+		max-width: 1024px;
+		margin: auto;
+		padding-bottom:5.95%;
+
+		// height:92px;
+	}
+}
